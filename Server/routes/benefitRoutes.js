@@ -1,5 +1,5 @@
 const express = require("express");
-const benefitController = require("../controllers/benefitController.js");
+const benefitController = require("../controllers/benefitController");
 
 const router = express.Router();
 
@@ -17,3 +17,5 @@ router
   .delete(benefitController.deleteBenefit);
 
 module.exports = router;
+
+// voir cours pour ajouter router spécifique ( les 5 forfaits les moins cher par ex)
