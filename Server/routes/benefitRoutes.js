@@ -1,13 +1,12 @@
 const express = require("express");
 const benefitController = require("../controllers/benefitController");
+const authController = require("../controllers/authController");
 
 const router = express.Router();
 
-//router.param('id', tourController.checkID);
-
 router
   .route("/")
-  .get(benefitController.getAllBenefits)
+  .get(authController.protect, benefitController.getAllBenefits)
   .post(benefitController.createBenefit);
 
 router
