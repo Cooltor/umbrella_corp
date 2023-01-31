@@ -13,7 +13,11 @@ router
   .route("/:id")
   .get(benefitController.getBenefit)
   .patch(benefitController.updateBenefit)
-  .delete(benefitController.deleteBenefit);
+  .delete(
+    authController.protect,
+    authController.restrictTo("admin"),
+    benefitController.deleteBenefit
+  );
 
 module.exports = router;
 
