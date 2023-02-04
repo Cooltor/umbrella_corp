@@ -3,55 +3,61 @@ const crypto = require("crypto");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Veuillez entrer votre nom"],
-    trim: true,
-  },
-  firstname: {
-    type: String,
-    required: [true, "Veuillez entrer votre prénom"],
-    trim: true,
-  },
-  email: {
-    type: String,
-    required: [true, "Veuillez entrer votre email"],
-    unique: true,
-    validate: [validator.isEmail, "Please provide a valid email"],
-    lowercase: true,
-  },
-  role: {
-    type: String,
-    enum: ["user", "admin"],
-    default: "user",
-  },
-  passwordChangedAt: Date,
-  passwordResetToken: String,
-  passwordResetExpires: Date,
-  active: {
-    type: Boolean,
-    default: true,
-    select: false,
-  },
-  password: {
-    type: String,
-    required: [true, "Veuillez créer votre mot de passe"],
-    minlength: [8, "Un mot de passe doit compter minimum 8 caractères"],
-    select: false,
-  },
-  passwordConfirm: {
-    type: String,
-    required: [true, "Veuillez confirmer votre mot de passe"],
-    validate: {
-      // This only on CREATE AND SAVE!!!
-      validator: function (el) {
-        return el === this.password;
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Veuillez entrer votre nom"],
+      trim: true,
+    },
+    firstname: {
+      type: String,
+      required: [true, "Veuillez entrer votre prénom"],
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: [true, "Veuillez entrer votre email"],
+      unique: true,
+      validate: [validator.isEmail, "Please provide a valid email"],
+      lowercase: true,
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date,
+    active: {
+      type: Boolean,
+      default: true,
+      select: false,
+    },
+    password: {
+      type: String,
+      required: [true, "Veuillez créer votre mot de passe"],
+      minlength: [8, "Un mot de passe doit compter minimum 8 caractères"],
+      select: false,
+    },
+    passwordConfirm: {
+      type: String,
+      required: [true, "Veuillez confirmer votre mot de passe"],
+      validate: {
+        // This only on CREATE AND SAVE!!!
+        validator: function (el) {
+          return el === this.password;
+        },
+        message: "Les mots de passe ne sont pas identiques",
       },
-      message: "Les mots de passe ne sont pas identiques",
     },
   },
-});
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
+);
 
 userSchema.pre("save", async function (next) {
   // Only run this function if password was actually modified
@@ -77,6 +83,7 @@ userSchema.pre(/^find/, function (next) {
   this.find({ active: { $ne: false } });
   next();
 });
+// Instance method
 
 userSchema.methods.correctPassword = async function (
   candidatePassword,

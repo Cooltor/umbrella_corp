@@ -1,8 +1,12 @@
 const express = require("express");
 const benefitController = require("../controllers/benefitController");
 const authController = require("../controllers/authController");
+const reviewRouter = require("./reviewRoutes");
 
 const router = express.Router();
+
+//router.use("/:tourId/reviews", reviewRouter); // on utilise la route  des reviews pour créer sur l'url des tours it's called mergeParams
+router.use("/:benefitId/reviews", reviewRouter);
 
 router
   .route("/")

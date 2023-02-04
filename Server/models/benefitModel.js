@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const slugify = require("slugify");
 
 const benefitSchema = new mongoose.Schema({
   type: {
@@ -34,6 +35,16 @@ const benefitSchema = new mongoose.Schema({
     maxlength: [255, "Un description doir avoir un maximum de 255 caractères"],
     minlength: [50, "Un description doir avoir un minimum de 50 caractères"],
   },
+  ratingsAverage: {
+    type: Number,
+    default: 4.5,
+    min: [1, "Rating must be above 1.0"],
+    max: [5, "Rating must be below 5.0"],
+  },
+  ratingsQuantity: {
+    type: Number,
+    default: 1,
+  },
   price: {
     type: Number,
     required: [true, "Une prestation doit avoir un prix"],
@@ -44,6 +55,20 @@ const benefitSchema = new mongoose.Schema({
     select: false,
   },
 });
+
+// Virtual populate reviews
+benefitSchema.virtual("reviews", {
+  ref: "Review",
+  foreignField: "benefit",
+  localField: "_id",
+});
+
+// // DOCUMENT MIDDLEWARE : run before .save() and .create() for Mongoose and not update
+// benefitSchema.pre("save", function (next) {
+//   //console.log(this); // this ici est égale au doc sur lequel on est
+//   this.slug = slugify(this.name, { lower: true });
+//   next();
+// });
 
 // QUERY MIDDLEWRE
 benefitSchema.pre(/^find/, function (next) {
