@@ -11,7 +11,11 @@ router.use("/:benefitId/reviews", reviewRouter);
 router
   .route("/")
   .get(authController.protect, benefitController.getAllBenefits)
-  .post(benefitController.createBenefit);
+  .post(
+    authController.protect,
+    authController.restrictTo("admin", "lead-guide"),
+    benefitController.createBenefit
+  );
 
 router
   .route("/:id")
