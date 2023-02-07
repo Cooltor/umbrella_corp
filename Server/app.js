@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
@@ -14,7 +15,12 @@ const reviewRouter = require("./routes/reviewRoutes");
 
 const app = express();
 
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
 // 1. GLOBAL MIDDLEWARES
+// Serving static files
+app.use(express.static(path.join(__dirname, "public")));
 
 // Set Security HTTP Headers
 app.use(helmet());
@@ -41,9 +47,6 @@ app.use(mongoSanitize());
 // Data sanitaziration against XSS
 app.use(xss());
 
-// Serving static files
-app.use(express.static(`${__dirname}/public`));
-
 // Prevent parameter pollution
 app.use(
   hpp({
@@ -58,6 +61,13 @@ app.use((req, res, next) => {
 });
 
 // 3. ROUTES
+app.get("/", (req, res) => {
+  res.status(200).render("base", {
+    benefit: "Conseil en domotique",
+    user: "Alex",
+  });
+});
+
 app.use("/api/v1/benefits", benefitRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);
