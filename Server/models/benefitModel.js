@@ -44,6 +44,7 @@ const benefitSchema = new mongoose.Schema(
       default: 4.5,
       min: [1, "La note doit être minimum de 1.0"],
       max: [5, "La note doit être maximum de 5.0"],
+      set: (val) => Math.round(val * 10) / 10, // 4.666666, 46.66666, 47, 4.7
     },
     ratingsQuantity: {
       type: Number,
