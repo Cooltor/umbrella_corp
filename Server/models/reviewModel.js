@@ -33,6 +33,8 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
+reviewSchema.index({ benefit: 1, user: 1 }, { unique: true });
+
 reviewSchema.pre(/^find/, function (next) {
   this.populate({
     path: "benefit",
@@ -52,7 +54,7 @@ reviewSchema.statics.calcAverageRatings = async function (benefitId) {
     },
     {
       $group: {
-        _id: "$tour",
+        _id: "$benefit",
         nRating: { $sum: 1 },
         avgRating: { $avg: "$rating" },
       },
@@ -60,25 +62,29 @@ reviewSchema.statics.calcAverageRatings = async function (benefitId) {
   ]);
   console.log(stats);
 
-  const ratingsQuantity = stats[0]?.numRatings ?? 0;
-  const ratingsAverage = stats[0]?.avgRating ?? 4.5;
-
-  await Benefit.findByIdAndUpdate(benefitId, {
-    ratingsQuantity,
-    ratingsAverage,
-  });
+  if (stats.length > 0) {
+    await Benefit.findByIdAndUpdate(benefitId, {
+      ratingsQuantity: stats[0].nRating,
+      ratingsAverage: stats[0].avgRating,
+    });
+  } else {
+    await Benefit.findByIdAndUpdate(benefitId, {
+      ratingsQuantity: 0,
+      ratingsAverage: 4.5,
+    });
+  }
 };
 
 reviewSchema.post("save", function () {
   //this points to current review
-
   this.constructor.calcAverageRatings(this.benefit); /// contructor vise vers le model actuel
 });
 
 reviewSchema.post(/^findOneAnd/, async (doc) => {
-  // Affiche zéro pour la quantité de note
+  // Affiche zéro quand il en reste 1...
   await doc.constructor.calcAverageRatings(doc.benefit);
 });
+
 const Review = mongoose.model("Review", reviewSchema);
 
 module.exports = Review;
