@@ -33,7 +33,46 @@ header {
   border-bottom: 1px solid black;
 }
 
-.header-top {
+.header-user {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  align-content: stretch;
+}
+.nav-login ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1rem;
+}
+.nav-login ul li {
+  list-style: none;
+  padding: 5px 25px 5px 25px;
+  margin: 15px 0 15px 0;
+  text-align: center;
+}
+
+.nav-login ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  align-content: stretch;
+}
+
+.header-bottom nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  align-content: stretch;
+}
+
+.header-middle {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -66,34 +105,25 @@ header img {
 
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV */
 
-nav {
+.header-bottom nav {
   width: 100%;
   margin-bottom: 5px;
 }
 
-nav ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
-}
-
-nav ul li {
+.header-bottom nav ul li {
   list-style: none;
   padding: 5px 25px 5px 25px;
   margin: 15px 0 15px 0;
   text-align: center;
 }
 
-nav ul li a {
+.header-bottom nav ul li a {
   text-decoration: none;
   color: whitesmoke;
   font-size: 1.5rem;
 }
 
-nav ul li a:hover {
+.header-bottom nav ul li a:hover {
   color: black;
 }
 
@@ -338,16 +368,19 @@ h2 {
   margin-bottom: 30px;
 }
 
+.description p {
+  width: 60%;
+}
+
 .contactUs {
-  width: 150px;
-  height: 50px;
+  text-decoration: none;
   border-radius: 5px;
   background-color: #0ca8f2;
   color: black;
   font-size: 1rem;
   border: 1px solid black;
   transition: 0.3s;
-  margin: 15px;
+  padding: 20px;
 }
 
 .contactUs:hover {
@@ -389,14 +422,14 @@ h2 {
 }
 
 .addReview {
-  width: 150px;
-  height: 50px;
+  text-decoration: none;
   border-radius: 5px;
   background-color: #ece1d7;
   color: black;
   font-size: 1rem;
   border: 1px solid black;
   transition: 0.3s;
+  padding: 20px;
 }
 
 .addReview:hover {

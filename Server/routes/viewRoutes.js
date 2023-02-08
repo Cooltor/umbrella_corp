@@ -11,4 +11,6 @@ router.get("/les-prestations/:slug", viewsController.getBenefit);
 
 router.get("/documentation", viewsController.getDocumentation);
 
+router.get("/se-connecter", viewsController.getLoginForm);
+
 module.exports = router;

@@ -37,3 +37,9 @@ exports.getDocumentation = (req, res) => {
     title: "Documentation",
   });
 };
+
+exports.getLoginForm = (req, res) => {
+  res.status(200).render("login", {
+    title: "Se connecter",
+  });
+};

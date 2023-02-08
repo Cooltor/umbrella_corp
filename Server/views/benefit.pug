@@ -17,7 +17,7 @@ block content
                     span= `Note: ${benefit.ratingsAverage}/5`
 
             .contactBenefit
-                button(href='/contact').contactUs Contactez-nous 
+                a.contactUs(href='/contact') Contactez-nous 
 
 
 
@@ -33,7 +33,7 @@ block content
                         p= `"${review.review }"`
                         span= `Note: ${review.rating}/5`
         
-        button.addReview Ajouter un avis
+        a.addReview(href='#') Ajouter un avis
 
 
 

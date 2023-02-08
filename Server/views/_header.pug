@@ -1,17 +1,29 @@
-header.header
-    .header-top
-        img(src='/img/logoBig.png', alt='Logo Umbrella Corp')
-        .title 
-            h1 Umbrella <br> Corp.
-            p Assistance et services informatiques 
-    .header-bottom 
-        nav 
-            ul
-                li 
-                    a(href='/') Qui sommes nous ?
-                li 
-                    a(href='/les-prestations') Nos prestations
-                li 
-                    a(href='#') Nous contacter
-                li 
-                    a(href='/documentation') Documentation
+header
+    .header-user
+        .header-top
+            nav.nav-login.nav-user
+                ul
+                    li
+                        a(href='#') Se connecter
+                    li
+                        a(href='#') S'inscrire
+                    //- li 
+                    //-     a(href='#') Romain
+
+    .header            
+        .header-middle 
+            img(src='/img/logoBig.png', alt='Logo Umbrella Corp')
+            .title 
+                h1 Umbrella <br> Corp.
+                p Assistance et services informatiques 
+        .header-bottom 
+            nav 
+                ul
+                    li 
+                        a(href='/') Qui sommes nous ?
+                    li 
+                        a(href='/les-prestations') Nos prestations
+                    li 
+                        a(href='#') Nous contacter
+                    li 
+                        a(href='/documentation') Documentation
