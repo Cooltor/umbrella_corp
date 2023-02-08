@@ -4,7 +4,7 @@ html
         meta(charset='UTF-8')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         link(rel='stylesheet', href='css/style.css')
-        //- link(rel='shortcut icon', type='image/png', href='img/favicon.png')
+        link(rel='shortcut icon', type='image/png', href='img/logoBig.png')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Inter&display=swap')
         title Umbrella Corp | Assistance et servives informatique
@@ -13,33 +13,13 @@ html
 
     body
         // HEADER
-        header.header
-            img(src='img/logoBig.png', alt='Logo Umbrella Corp')
-            .title 
-                h1 Umbrella <br> Corp
-                p Assistance et services informatiques 
-        
+        include _header
+
+
         // CONTAINER
-        #container
-            nav 
-                ul
-                    li 
-                        a(href='#') Qui sommes nous ?
-                    li 
-                        a(href='#') Nos prestations
-                    li 
-                        a(href='#') Nous contacter
-                    li 
-                        a(href='#') Documentation
-            .about 
-                img.about-img(src='img/course.jpg', alt='Photo de cours')
-                .article     
-                    h2 Qui sommes nous ?
-                    p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, a voluptatem! Illo delectus eligendi totam nobis voluptatibus magnam id culpa ratione quidem, rerum sint eum, porro reiciendis numquam doloremque nostrum!Asperiores amet adipisci incidunt ea omnis voluptates officia, provident eos quidem delectus possimus molestias aliquam, cumque deleniti veritatis, sit ratione repudiandae cum tempore vel beatae ipsam debitis ex. Eligendi, officia.
-
-
+        block content
         
         
         // FOOTER
-        footer.footer
+        include _footer
             

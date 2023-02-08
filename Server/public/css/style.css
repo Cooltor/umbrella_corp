@@ -17,10 +17,10 @@ body {
 
 /* HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER */
 
-.header {
+header {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
@@ -28,8 +28,16 @@ body {
   background-color: #17344f;
   color: whitesmoke;
   font-family: "Inter", sans-serif;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+}
+
+.header-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }
 
 .title {
@@ -42,32 +50,22 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .title p {
   text-align: start;
 }
 
-/* CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER */
-
-#container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
-  width: 80%;
+header img {
+  width: 15%;
 }
+
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV */
 
 nav {
   width: 100%;
-  background-color: #d2ebf7;
-  border-radius: 25px;
-  box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35);
-  margin-top: 30px;
+  margin-bottom: 5px;
 }
 
 nav ul {
@@ -92,12 +90,29 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
+  color: whitesmoke;
+  font-size: 1rem;
 }
 
 nav ul li a:hover {
   color: #808080;
+}
+
+/* CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER */
+
+#container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  width: 80%;
+  margin-bottom: 200px;
+}
+
+#container h1 {
+  padding: 50px 0 30px 0;
 }
 
 /* ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT */
@@ -110,7 +125,7 @@ nav ul li a:hover {
   align-items: center;
   align-content: stretch;
   width: 100%;
-  padding: 150px 0 150px 0;
+  padding: 75px 0 75px 0;
 }
 
 .about-img {
@@ -168,7 +183,7 @@ h2 {
   justify-content: center;
   align-items: flex-start;
   align-content: stretch;
-  padding: 0 0 0 15px;
+  padding: 25px;
 }
 
 .article a {
@@ -250,4 +265,21 @@ h2 {
   background-color: #17344f;
   color: whitesmoke;
   font-size: 1.5rem;
+}
+
+footer.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  background-color: #ece1d7;
+  padding: 15px 0 15px 0;
+}
+
+footer img {
+  width: 25%;
+  padding: 0 15px 0 15px;
 }

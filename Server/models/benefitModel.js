@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const slugify = require("slugify");
+const slugify = require("slugify");
 
 const benefitSchema = new mongoose.Schema(
   {
@@ -29,6 +29,7 @@ const benefitSchema = new mongoose.Schema(
         "Un titre de prestation doir avoir un minimum de 10 caractères",
       ],
     },
+    slug: String,
     description: {
       type: String,
       trim: true,
@@ -73,12 +74,12 @@ benefitSchema.virtual("reviews", {
   localField: "_id",
 });
 
-// // DOCUMENT MIDDLEWARE : run before .save() and .create() for Mongoose and not update
-// benefitSchema.pre("save", function (next) {
-//   //console.log(this); // this ici est égale au doc sur lequel on est
-//   this.slug = slugify(this.name, { lower: true });
-//   next();
-// });
+// DOCUMENT MIDDLEWARE : run before .save() and .create() for Mongoose and not update
+benefitSchema.pre("save", function (next) {
+  //console.log(this); // this ici est égale au doc sur lequel on est
+  this.slug = slugify(this.title, { lower: true });
+  next();
+});
 
 // QUERY MIDDLEWRE
 benefitSchema.pre(/^find/, function (next) {

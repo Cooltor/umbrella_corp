@@ -12,6 +12,7 @@ const globalErrorHandler = require("./controllers/errorController");
 const benefitRouter = require("./routes/benefitRoutes");
 const userRouter = require("./routes/userRoutes");
 const reviewRouter = require("./routes/reviewRoutes");
+const viewRouter = require("./routes/viewRoutes");
 
 const app = express();
 
@@ -61,13 +62,7 @@ app.use((req, res, next) => {
 });
 
 // 3. ROUTES
-app.get("/", (req, res) => {
-  res.status(200).render("base", {
-    benefit: "Conseil en domotique",
-    user: "Alex",
-  });
-});
-
+app.use("/", viewRouter);
 app.use("/api/v1/benefits", benefitRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/reviews", reviewRouter);

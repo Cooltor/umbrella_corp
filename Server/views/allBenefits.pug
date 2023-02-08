@@ -1,0 +1,19 @@
+extends base
+
+block content
+    #container
+        h1= title
+
+            
+        #benefits
+            #cardReview 
+
+                each benefit in benefits
+
+                    .card 
+                        img(src='img/icon.png', alt='Icone')
+                        .article 
+                            h3= benefit.title  
+                            a(href='#') En savoir plus
+                        
+                
