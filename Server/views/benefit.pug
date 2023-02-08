@@ -1,0 +1,39 @@
+extends base
+
+block content 
+
+    #container
+        h1= benefit.type
+
+        .benefit
+            
+            .aboutBenefit 
+                .description 
+                    h2= benefit.title
+                    p= benefit.description
+
+                .priceBenefit 
+                    span= `Prix: ${benefit.price}€`
+                    span= `Note: ${benefit.ratingsAverage}/5`
+
+            .contactBenefit
+                button(href='/contact').contactUs Contactez-nous 
+
+
+
+        h2 Avis
+
+
+
+        
+        .reviewBox
+            each review in benefit.reviews
+                    .article 
+                        h3= review.user.firstname
+                        p= `"${review.review }"`
+                        span= `Note: ${review.rating}/5`
+        
+        button.addReview Ajouter un avis
+
+
+

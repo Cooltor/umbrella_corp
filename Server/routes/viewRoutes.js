@@ -7,7 +7,7 @@ router.get("/", viewsController.getOverview);
 
 router.get("/les-prestations", viewsController.getAllBenefits);
 
-router.get("/benefit", viewsController.getBenefit);
+router.get("/les-prestations/:slug", viewsController.getBenefit);
 
 router.get("/documentation", viewsController.getDocumentation);
 

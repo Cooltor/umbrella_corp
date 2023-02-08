@@ -6,7 +6,9 @@
 
 body {
   width: 100%;
-  font-family: "DM Serif Display", serif;
+  /* font-family: "DM Serif Display", serif; */
+  font-family: "Inconsolata", monospace;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -25,9 +27,10 @@ header {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-  background-color: #17344f;
+  background-color: #0d70fc;
   color: whitesmoke;
   font-family: "Inter", sans-serif;
+  border-bottom: 1px solid black;
 }
 
 .header-top {
@@ -84,18 +87,14 @@ nav ul li {
   text-align: center;
 }
 
-.borderR {
-  border-right: 1px solid black;
-}
-
 nav ul li a {
   text-decoration: none;
   color: whitesmoke;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 nav ul li a:hover {
-  color: #808080;
+  color: black;
 }
 
 /* CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER CONTAINER */
@@ -130,8 +129,9 @@ nav ul li a:hover {
 
 .about-img {
   width: 50%;
-  border-radius: 25px;
-  box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  /* box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35); */
+  border: 1px solid black;
 }
 
 .about p,
@@ -163,11 +163,17 @@ h2 {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-  background-color: #d2ebf7;
-  border-radius: 25px;
-  box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: #0ca8f2;
+  border-radius: 5px;
+  border: 1px solid black;
+  /* box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35); */
   margin: 15px 0 15px 0;
   padding: 15px 0 15px 0;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-radius: 50px;
 }
 
 .card img {
@@ -188,11 +194,11 @@ h2 {
 
 .article a {
   text-decoration: none;
-  color: #808080;
+  color: whitesmoke;
 }
 
 .article a:hover {
-  color: #17344f;
+  color: black;
 }
 
 /* CONTACT CONTACT CONTACT CONTACT CONTACT*/
@@ -282,4 +288,117 @@ footer.footer {
 footer img {
   width: 25%;
   padding: 0 15px 0 15px;
+}
+
+/* BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT */
+
+.benefit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  padding: 100px 0 100px 0;
+}
+
+.aboutBenefit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  text-align: center;
+
+  padding-bottom: 50px;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.description h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contactUs {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #0ca8f2;
+  color: black;
+  font-size: 1rem;
+  border: 1px solid black;
+  transition: 0.3s;
+  margin: 15px;
+}
+
+.contactUs:hover {
+  border-radius: 50px;
+}
+
+.priceBenefit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: stretch;
+  padding: 50px 0 20px 0;
+}
+
+.reviewBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  background-color: #ece1d7;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 15px;
+}
+
+.article p {
+  margin: 5px;
+}
+
+.reviewBox .article {
+  width: 80%;
+  padding: 15px;
+}
+
+.addReview {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ece1d7;
+  color: black;
+  font-size: 1rem;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+
+.addReview:hover {
+  border-radius: 50px;
 }

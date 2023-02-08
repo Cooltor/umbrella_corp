@@ -35,8 +35,8 @@ const benefitSchema = new mongoose.Schema(
       trim: true,
       required: [true, "Une prestation doit avoir une description"],
       maxlength: [
-        255,
-        "Un description doir avoir un maximum de 255 caractères",
+        500,
+        "Un description doir avoir un maximum de 500 caractères",
       ],
       minlength: [50, "Un description doir avoir un minimum de 50 caractères"],
     },
