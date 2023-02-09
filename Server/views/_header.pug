@@ -1,15 +1,21 @@
 header
     .header-user
         .header-top
-            nav.nav-login
-                ul
-                    li
-                        a(href='/se-connecter') Se connecter
-                    li
-                        a(href='#') S'inscrire
-            //- .nav-user
-                    //- li 
-                    //-     a(href='#') Romain
+            
+            nav.nav-user.nav-login
+                if user
+                    ul
+                        li 
+                            a(href='#')= ` ${user.firstname} (connecté)`
+                        li  
+                            a(href='#') Déconnexion
+                else
+                    ul
+                        li
+                            a(href='/se-connecter') Se connecter
+                        li
+                            a(href='#') S'inscrire
+
 
     .header            
         .header-middle 

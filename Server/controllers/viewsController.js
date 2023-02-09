@@ -2,9 +2,15 @@ const Benefit = require("../models/benefitModel");
 const catchAsync = require("../utils/catchAsync");
 
 exports.getOverview = (req, res) => {
-  res.status(200).render("overview", {
-    title: "Qui sommes-nous ?",
-  });
+  res
+    .status(200)
+    .set(
+      "Content-Security-Policy",
+      "connect-src 'self' https://cdnjs.cloudflare.com"
+    )
+    .render("overview", {
+      title: "Qui sommes-nous ?",
+    });
 };
 
 exports.getAllBenefits = catchAsync(async (req, res, next) => {
@@ -12,10 +18,16 @@ exports.getAllBenefits = catchAsync(async (req, res, next) => {
   const benefits = await Benefit.find();
   // 2. Build template
   // 3. Render that template using tour data from 1.
-  res.status(200).render("allBenefits", {
-    title: "Les prestations",
-    benefits: benefits,
-  });
+  res
+    .status(200)
+    .set(
+      "Content-Security-Policy",
+      "connect-src 'self' https://cdnjs.cloudflare.com"
+    )
+    .render("allBenefits", {
+      title: "Les prestations",
+      benefits: benefits,
+    });
 });
 
 exports.getBenefit = catchAsync(async (req, res) => {
@@ -26,10 +38,16 @@ exports.getBenefit = catchAsync(async (req, res) => {
   });
   // 2. Build template
   // 3. Render template using data from 1.
-  res.status(200).render("benefit", {
-    title: benefit.name,
-    benefit,
-  });
+  res
+    .status(200)
+    .set(
+      "Content-Security-Policy",
+      "connect-src 'self' https://cdnjs.cloudflare.com"
+    )
+    .render("benefit", {
+      title: benefit.name,
+      benefit,
+    });
 });
 
 exports.getDocumentation = (req, res) => {
