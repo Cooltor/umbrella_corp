@@ -2,10 +2,14 @@ extends base
 
 block content
     #container
-        h1 Se connecter
-        form.form(action='/login', method='post')
-            label(for='email') Votre email :
-            input(type='email', name='email', id='email', placeholder='exemple@mail.com', required)
-            label(for='password') Votre mot de passe :
-            input(type='password', name='password', id='password',placeholder='••••••••', required)
-            input(type='submit', value='Login')
+        #login
+            h1= title
+            form.form(action='/login', method='post')
+                .form-group
+                    label(for='email') Votre email :
+                    input(type='email', name='email', id='email', placeholder='exemple@mail.com', required)
+                .form-group   
+                    label(for='password') Votre mot de passe :
+                    input(type='password', name='password', id='password',placeholder='••••••••', required)
+                .form-group
+                    input.submit(type='submit', value='Se connecter')
