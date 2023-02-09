@@ -39,7 +39,13 @@ exports.getDocumentation = (req, res) => {
 };
 
 exports.getLoginForm = (req, res) => {
-  res.status(200).render("login", {
-    title: "Se connecter",
-  });
+  res
+    .status(200)
+    .set(
+      "Content-Security-Policy",
+      "connect-src 'self' https://cdnjs.cloudflare.com"
+    )
+    .render("login", {
+      title: "Se connecter",
+    });
 };
