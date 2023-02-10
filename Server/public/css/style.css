@@ -211,13 +211,14 @@ h2 {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-  background-color: #0ca8f2;
+  background-color: #fcab0d;
   border-radius: 5px;
   border: 1px solid black;
   /* box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35); */
   margin: 15px 0 15px 0;
   padding: 15px 0 15px 0;
   transition: 0.3s;
+  color: black;
 }
 
 .card:hover {
@@ -231,7 +232,6 @@ h2 {
 
 a.card {
   text-decoration: none;
-  color: whitesmoke;
 }
 
 .article {

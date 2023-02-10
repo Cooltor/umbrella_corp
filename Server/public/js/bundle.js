@@ -12200,7 +12200,7 @@ var create = /*#__PURE__*/function () {
         case 3:
           res = _context.sent;
           if (res.data.status == "success") {
-            (0, _alerts.showAlert)("success", "Prestations créee avec succès!");
+            (0, _alerts.showAlert)("success", "Prestation créé avec succès!");
             window.setTimeout(function () {
               location.assign("/les-prestations");
             }, 1500);

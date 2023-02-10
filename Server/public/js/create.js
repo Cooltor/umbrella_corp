@@ -16,7 +16,7 @@ export const create = async (type, title, description, price) => {
     });
 
     if (res.data.status == "success") {
-      showAlert("success", "Prestations créee avec succès!");
+      showAlert("success", "Prestation créé avec succès!");
       window.setTimeout(() => {
         location.assign("/les-prestations");
       }, 1500);
