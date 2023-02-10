@@ -5,6 +5,7 @@ import { login, logout } from "./login";
 // DOM ELEMENTS
 const loginForm = document.querySelector(".form");
 const logOutBtn = document.querySelector(".nav-login--logout");
+const card = document.querySelector(".card");
 
 // DELEGATION
 

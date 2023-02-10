@@ -12195,6 +12195,7 @@ var _login = require("./login");
 // DOM ELEMENTS
 var loginForm = document.querySelector(".form");
 var logOutBtn = document.querySelector(".nav-login--logout");
+var card = document.querySelector(".card");
 
 // DELEGATION
 

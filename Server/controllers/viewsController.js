@@ -1,5 +1,6 @@
 const Benefit = require("../models/benefitModel");
 const catchAsync = require("../utils/catchAsync");
+const AppError = require("../utils/appError");
 
 exports.getOverview = (req, res) => {
   res
@@ -30,12 +31,16 @@ exports.getAllBenefits = catchAsync(async (req, res, next) => {
     });
 });
 
-exports.getBenefit = catchAsync(async (req, res) => {
+exports.getBenefit = catchAsync(async (req, res, next) => {
   // 1. Get the data, for the requested tour (including reviews and guides)
   const benefit = await Benefit.findOne({ slug: req.params.slug }).populate({
     path: "reviews",
     fields: "review rating user",
   });
+
+  if (!benefit) {
+    return next(new AppError("Il n'y a pas de prestation avec ce titre.", 404));
+  }
   // 2. Build template
   // 3. Render template using data from 1.
   res
@@ -45,7 +50,7 @@ exports.getBenefit = catchAsync(async (req, res) => {
       "connect-src 'self' https://cdnjs.cloudflare.com"
     )
     .render("benefit", {
-      title: benefit.name,
+      title: benefit.title,
       benefit,
     });
 });
