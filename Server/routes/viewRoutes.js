@@ -6,14 +6,32 @@ const router = express.Router();
 
 router.use(authController.isLoggedIn);
 
-router.get("/", viewsController.getOverview);
+router.get("/", authController.isLoggedIn, viewsController.getOverview);
 
-router.get("/les-prestations", viewsController.getAllBenefits);
+router.get(
+  "/les-prestations",
+  authController.isLoggedIn,
+  viewsController.getAllBenefits
+);
 
-router.get("/les-prestations/:slug", viewsController.getBenefit);
+router.get(
+  "/les-prestations/:slug",
+  authController.isLoggedIn,
+  viewsController.getBenefit
+);
 
-router.get("/documentation", viewsController.getDocumentation);
+router.get(
+  "/documentation",
+  authController.isLoggedIn,
+  viewsController.getDocumentation
+);
 
-router.get("/se-connecter", viewsController.getLoginForm);
+router.get(
+  "/se-connecter",
+  authController.isLoggedIn,
+  viewsController.getLoginForm
+);
+
+router.get("/mon-compte", authController.protect, viewsController.getAccount);
 
 module.exports = router;

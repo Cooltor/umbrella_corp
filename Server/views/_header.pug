@@ -2,11 +2,11 @@ header
     .header-user
         .header-top
             
-            nav.nav-user.nav-login
+            nav.nav-login
                 if user
                     ul
                         li 
-                            a(href='#')= ` ${user.firstname} (connecté)`
+                            a(href='/mon-compte')= ` ${user.firstname} (connecté)`
                         li  
                             a.nav-login--logout(href='#') Déconnexion
                 else

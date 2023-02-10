@@ -464,6 +464,7 @@ h2 {
   justify-content: center;
   align-items: center;
   align-content: stretch;
+  padding: 50px 0 50px 0;
 }
 
 .form-group {
@@ -478,7 +479,7 @@ h2 {
 }
 
 .form-group input {
-  width: 80%;
+  width: 50%;
   padding: 15px 10px 15px 0;
   margin: 15px 0 15px 0;
   border-radius: 5px;
@@ -488,7 +489,18 @@ h2 {
 }
 
 .submit {
-  width: 80%;
+  width: 30%;
+  padding: 15px 0 15px 0;
+  margin: 15px 0 15px 0;
+  border-radius: 5px;
+  background-color: #0ca8f2;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.form button {
+  width: 30%;
   padding: 15px 0 15px 0;
   margin: 15px 0 15px 0;
   border-radius: 5px;
@@ -500,6 +512,17 @@ h2 {
 
 .submit:hover {
   border-radius: 50px;
+}
+
+.form button:hover {
+  border-radius: 50px;
+}
+
+.form h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 .alert {
