@@ -2,19 +2,23 @@
 import axios from "axios";
 import { showAlert } from "./alerts";
 
-export const updateData = async (name, firstname, email) => {
+export const updateSettings = async (data, type) => {
   try {
+    const url =
+      type === "password"
+        ? "/api/v1/users/updateMyPassword"
+        : "/api/v1/users/updateMe";
+
     const res = await axios({
       method: "PATCH",
-      url: "http://127.0.0.1:3000/api/v1/users/updateMe",
-      data: { name, firstname, email },
+      url,
+      data,
     });
 
-    if (res.data.status === "success") {
-      showAlert("success", "Modification(s) enregistrée(s) avec succès!");
-      window.setTimeout(() => {
-        location.assign("/mon-compte");
-      }, 1500);
+    console.log(res);
+
+    if (res.data.status == "success") {
+      showAlert("success", `${type.toUpperCase()} mis à jour avec succès!`);
     }
   } catch (err) {
     showAlert("error", err.response.data.message);

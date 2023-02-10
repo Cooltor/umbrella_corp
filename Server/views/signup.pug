@@ -1,0 +1,24 @@
+extends base 
+
+block content 
+    #container
+        
+        h1= title 
+        form.form
+            .form-group 
+                label(for='new-name') Votre Nom :
+                input#new-name.form-control(type='text', name='new-name', placeholder='Nom')
+            .form-group
+                label(for='new-firstname') Votre prénom :
+                input#new-firstname.form-control(type='text', name='new-firstname', placeholder='Prénom')
+            .form-group
+                label(for='new-email') Email 
+                input#new-email.form-control(type='email', name='new-email', placeholder='Email') 
+            .form-group 
+                label(for='new-password') Mot de passe :
+                input#new-password.form-control(type='password', name='new-password', placeholder='Mot de passe') 
+            .form-group 
+                label(for='new-passwordConfirm') Confirmation du mot de passe :
+                input#new-passwordConfirm.form-control(type='password', name='new-password', placeholder='Mot de passe de confirmation')
+            .form-group
+                button.btn.btn--singup S'inscrire

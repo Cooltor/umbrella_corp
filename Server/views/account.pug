@@ -24,15 +24,15 @@ block content
             h2 Changer de mot de passe
             .form-group
                 label(for='password-current') Votre mot de passe actuel:
-                input(type='password', placeholder='••••••••', required, minlength='8')
+                input#password-current(type='password', placeholder='••••••••', required, minlength='8')
             .form-group
                 label(for='password') Nouveau mot de passe :
-                input(type='password', name='password', placeholder='••••••••', required, minlength='8')
+                input#password(type='password', name='password', placeholder='••••••••', required, minlength='8')
             .form-group  
                 label(for='password-confirm') Confirmer le mot de passe :
-                input(type='password', name='password-confirm', placeholder='••••••••', required, minlength='8')
+                input#password-confirm(type='password', name='password-confirm', placeholder='••••••••', required, minlength='8')
             .form-group.bottom
-                button  Valider
+                button.btn--save-password Valider
 
         if (user.role === 'admin')
             form.form.form-admin

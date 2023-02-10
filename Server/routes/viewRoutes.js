@@ -32,6 +32,8 @@ router.get(
   viewsController.getLoginForm
 );
 
+router.get("/inscription", viewsController.getSignupForm);
+
 router.get("/mon-compte", authController.protect, viewsController.getAccount);
 
 module.exports = router;
