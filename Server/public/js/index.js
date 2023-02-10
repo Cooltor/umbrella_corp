@@ -1,11 +1,12 @@
 /* eslint-disable */
 import "@babel/polyfill";
 import { login, logout } from "./login";
+import { updateData } from "./updateSettings";
 
 // DOM ELEMENTS
-const loginForm = document.querySelector(".form");
-const logOutBtn = document.querySelector(".nav-login--logout");
-const card = document.querySelector(".card");
+const loginForm = document.querySelector(".form--login");
+const logOutBtn = document.querySelector(".nav__el--logout");
+const UserDataForm = document.querySelector(".form-name");
 
 // DELEGATION
 
@@ -19,3 +20,14 @@ if (loginForm) {
 }
 
 if (logOutBtn) logOutBtn.addEventListener("click", logout);
+
+if (UserDataForm) {
+  UserDataForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const name = document.getElementById("name").value;
+    const firstname = document.getElementById("firstname").value;
+
+    updateData(name, firstname, email);
+  });
+}

@@ -9,14 +9,14 @@ block content
             h2 Modifier mes informations
             .form-group
                 label(for='name') Votre nom  :
-                input(type='text', name='name', placeholder=`${user.name}`, required)
+                input#name(type='text', name='name', value=`${user.name}`, required)
             .form-group
                 label(for='firstname') Votre prénom  :
-                input(type='text', name='firstname', placeholder=`${user.firstname}`, required)
+                input#firstname(type='text', name='firstname', value=`${user.firstname}`, required)
             .form-group   
                 label(for='email') Votre email :
-                input(type='email', name='email', placeholder=`${user.email}`, required)
-            .form-group.right 
+                input#email(type='email', name='email', value=`${user.email}`, required)
+            .form-group.top
                 button  Valider
         
 
@@ -31,7 +31,7 @@ block content
             .form-group  
                 label(for='password-confirm') Confirmer le mot de passe :
                 input(type='password', name='password-confirm', placeholder='••••••••', required, minlength='8')
-            .form-group.right 
+            .form-group.bottom
                 button  Valider
 
         if (user.role === 'admin')

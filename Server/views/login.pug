@@ -4,7 +4,7 @@ block content
     #container
         #login
             h1= title
-            form.form(action='/login', method='post')
+            form.form.form--login
                 .form-group
                     label(for='email') Votre email :
                     input(type='email', name='email', id='email', placeholder='exemple@mail.com', required)
