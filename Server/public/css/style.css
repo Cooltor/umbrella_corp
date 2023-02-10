@@ -151,6 +151,17 @@ header img {
   padding: 50px 0 30px 0;
 }
 
+.account {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  width: 80%;
+  margin-bottom: 200px;
+}
+
 /* ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT */
 
 .about {
@@ -216,6 +227,11 @@ h2 {
 .card img {
   width: 15%;
   padding-right: 15px;
+}
+
+a.card {
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 .article {
@@ -441,6 +457,20 @@ h2 {
 
 .addReview:hover {
   border-radius: 50px;
+}
+
+textarea {
+  width: 80%;
+  padding: 15px 0 15px 0;
+  margin: 15px 0 15px 0;
+  border-radius: 5px;
+}
+
+select {
+  width: 5%;
+  padding: 15px 0 15px 0;
+  margin: 15px 0 15px 0;
+  border-radius: 5px;
 }
 
 /* LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN  */

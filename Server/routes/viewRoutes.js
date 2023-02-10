@@ -26,6 +26,8 @@ router.get(
   viewsController.getDocumentation
 );
 
+router.get("/contact", authController.isLoggedIn, viewsController.getContact);
+
 router.get(
   "/se-connecter",
   authController.isLoggedIn,

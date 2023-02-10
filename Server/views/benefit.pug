@@ -32,8 +32,20 @@ block content
                         h3= review.user.firstname
                         p= `"${review.review }"`
                         span= `Note: ${review.rating}/5`
-        
-        a.addReview(href='#') Ajouter un avis
 
+        form.form.form-review 
+            .form-group
+                label(for='rating') Note
+                select(name='rating' id='rating' required)
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+            .form-group
+                label(for='review') Avis
+                textarea(name='review' id='review' cols='30' rows='10' required)
+            .form-group
+                button.btn.btn--review Envoyer
 
 

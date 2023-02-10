@@ -10,10 +10,10 @@ block content
 
                 each benefit in benefits
 
-                    .card 
+                    a(href=`/les-prestations/${benefit.slug}`).card 
                         img(src='img/icon.png', alt='Icone')
                         .article 
                             h3= benefit.title  
-                            a(href=`/les-prestations/${benefit.slug}`) En savoir plus
+                            
                         
                 
