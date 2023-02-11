@@ -540,6 +540,17 @@ select {
   transition: 0.3s;
 }
 
+form .btn--delete-benefit {
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgb(155, 27, 27);
+  color: whitesmoke;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  transition: 0.3s;
+  padding: 20px;
+}
+
 .submit:hover {
   border-radius: 50px;
 }

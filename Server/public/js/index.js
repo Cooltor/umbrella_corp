@@ -4,6 +4,7 @@ import { login, logout } from "./login";
 import { updateSettings } from "./updateSettings";
 import { signup } from "./signup";
 import { create } from "./create";
+import { updateBenefit, deleteBenefit } from "./updateBenefit";
 
 // DOM ELEMENTS
 const loginForm = document.querySelector(".form--login");
@@ -12,6 +13,8 @@ const UserDataForm = document.querySelector(".form-name");
 const UserPasswordForm = document.querySelector(".form-password");
 const signupForm = document.querySelector(".form--signup");
 const createForm = document.querySelector(".form-newBenefit");
+const updateForm = document.querySelector(".form-updateBenefit");
+const deleteBtn = document.querySelector(".btn--delete-benefit");
 
 // DELEGATION
 
@@ -78,3 +81,23 @@ if (createForm) {
     create(type, title, description, price);
   });
 }
+
+if (updateForm) {
+  updateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const id = document.getElementById("update-id").value;
+    const type = document.getElementById("update-type").value;
+    const title = document.getElementById("update-title").value;
+    const description = document.getElementById("update-description").value;
+    const price = document.getElementById("update-price").value;
+    updateBenefit(id, type, title, description, price);
+  });
+}
+
+if (
+  deleteBtn.addEventListener("click", (e) => {
+    const id = document.getElementById("update-id").value;
+    e.preventDefault();
+    deleteBenefit(id);
+  })
+);

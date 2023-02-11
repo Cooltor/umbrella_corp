@@ -36,9 +36,9 @@ const benefitSchema = new mongoose.Schema(
       required: [true, "Une prestation doit avoir une description"],
       maxlength: [
         500,
-        "Un description doir avoir un maximum de 500 caractères",
+        "Un description doit avoir un maximum de 500 caractères",
       ],
-      minlength: [50, "Un description doir avoir un minimum de 50 caractères"],
+      minlength: [50, "Un description doit avoir un minimum de 50 caractères"],
     },
     ratingsAverage: {
       type: Number,

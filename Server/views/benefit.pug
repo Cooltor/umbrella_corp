@@ -5,47 +5,75 @@ block content
     #container
         h1= benefit.type
 
-        .benefit
+        if (user.role === 'admin')
+            .benefit 
+
+                form.form.form-updateBenefit
+                    h2 Modifier la prestation
+                    .form-group
+                        label(for='update-id') Ne pas modifier l'ID :
+                        input#update-id(type='text', name='update-id', value=`${benefit.id}`, required)
+
+                    .form-group
+                        label(for='update-type') Catégorie de la prestation :
+                        input#update-type(type='text', name='update-type', value=`${benefit.type}`, required)
+                    .form-group
+                        label(for='update-title') Titre de la prestation :
+                        input#update-title(type='text', name='update-title',value=`${benefit.title}`, required)
+                    .form-group
+                        label(for='update-description') Description de la prestation :
+                        textarea#update-description(type='text' cols="30" rows="10" name='update-description' value=`${benefit.description}` required)
+                    .form-group
+                        label(for='update-price') Prix de la prestation :
+                        input#update-price(type='number', name='update-price', value=`${benefit.price}`, required)
+
+                    .form-group.bottom
+                        button.btn--update-benefit Modifier
+                        
+                button.btn--delete-benefit Supprimer
+
+        else
+            .benefit
+                
+                .aboutBenefit 
+                    .description 
+                        h2= benefit.title
+                        p= benefit.description
+
+                    .priceBenefit 
+                        span= `Prix: ${benefit.price}€`
+                        span= `Note: ${benefit.ratingsAverage}/5`
+
+                .contactBenefit
+                    a.contactUs(href='/contact') Contactez-nous 
+
+
+
+            h2 Avis
+
+
+
             
-            .aboutBenefit 
-                .description 
-                    h2= benefit.title
-                    p= benefit.description
+            .reviewBox
+                each review in benefit.reviews
+                        .article 
+                            h3= review.user.firstname
+                            p= `"${review.review }"`
+                            span= `Note: ${review.rating}/5`
 
-                .priceBenefit 
-                    span= `Prix: ${benefit.price}€`
-                    span= `Note: ${benefit.ratingsAverage}/5`
-
-            .contactBenefit
-                a.contactUs(href='/contact') Contactez-nous 
-
-
-
-        h2 Avis
-
-
-
-        
-        .reviewBox
-            each review in benefit.reviews
-                    .article 
-                        h3= review.user.firstname
-                        p= `"${review.review }"`
-                        span= `Note: ${review.rating}/5`
-
-        form.form.form-review 
-            .form-group
-                label(for='rating') Note
-                select(name='rating' id='rating' required)
-                    option(value='1') 1
-                    option(value='2') 2
-                    option(value='3') 3
-                    option(value='4') 4
-                    option(value='5') 5
-            .form-group
-                label(for='review') Avis
-                textarea(name='review' id='review' cols='30' rows='10' required)
-            .form-group
-                button.btn.btn--review Envoyer
+            form.form.form-review 
+                .form-group
+                    label(for='rating') Note
+                    select(name='rating' id='rating' required)
+                        option(value='1') 1
+                        option(value='2') 2
+                        option(value='3') 3
+                        option(value='4') 4
+                        option(value='5') 5
+                .form-group
+                    label(for='review') Avis
+                    textarea(name='review' id='review' cols='30' rows='10' required)
+                .form-group
+                    button.btn.btn--review Envoyer
 
 

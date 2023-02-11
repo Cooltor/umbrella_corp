@@ -47,10 +47,12 @@ block content
                         input#new-title(type='text', name='new-title', required)
                     .form-group
                         label(for='new-description') Description de la prestation :
-                        input#new-description(type='text', name='new-description', required)
+                        textarea#new-description(type='text' cols="30" rows="10" name='new-description', required)
                     .form-group
                         label(for='new-price') Prix de la prestation :
                         input#new-price(type='number', name='new-price', required)
 
                     .form-group.bottom
                         button.btn--save-benefit Valider
+
+                    p INFO : pour modifier, rendez-vous sur la page de la prestation en question.
