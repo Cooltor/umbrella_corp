@@ -375,13 +375,14 @@ h2 {
 }
 
 .description {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   align-content: stretch;
+  text-align: center;
 }
 
 .description h2 {
@@ -392,7 +393,9 @@ h2 {
 }
 
 .description p {
-  width: 60%;
+  width: 100%;
+  text-align: center;
+  height: 50px;
 }
 
 .contactUs {
