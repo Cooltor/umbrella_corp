@@ -16,7 +16,7 @@ const signupForm = document.querySelector(".form--signup");
 const createForm = document.querySelector(".form-newBenefit");
 const updateForm = document.querySelector(".form-updateBenefit");
 const deleteBtn = document.querySelector(".btn--delete-benefit");
-const reviewForm = document.querySelector(".form-addReview ");
+const reviewForm = document.querySelector(".form-addReview");
 
 // DELEGATION
 
@@ -107,10 +107,11 @@ if (
 if (reviewForm) {
   reviewForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const rating = document.getElementById("review-rating").value;
     const review = document.getElementById("review-new").value;
     const benefit = document.getElementById("benefit-id").value;
     const user = document.getElementById("user-id").value;
-    createReview(rating, review, benefit, user);
+    createReview(review, rating, benefit, user);
   });
 }

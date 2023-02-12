@@ -6,11 +6,13 @@ const reviewSchema = new mongoose.Schema(
     review: {
       type: String,
       required: [true, "Un commentaire ne peut pas être vide."],
+      minlength: [10, "Un commentaire doit avoir au moins 10 caractères."],
     },
     rating: {
       type: Number,
       min: 1,
       max: 5,
+      required: [true, "Un commentaire doit avoir une note."],
     },
     createdAt: {
       type: Date,

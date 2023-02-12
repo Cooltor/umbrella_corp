@@ -2,14 +2,14 @@
 import axios from "axios";
 import { showAlert } from "./alerts";
 
-export const createReview = async (rating, review, benefit, user) => {
+export const createReview = async (review, rating, benefit, user) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "/api/v1/reviews",
+      url: `/api/v1/benefits/${benefit}/reviews`,
       data: {
-        rating,
         review,
+        rating,
         benefit,
         user,
       },

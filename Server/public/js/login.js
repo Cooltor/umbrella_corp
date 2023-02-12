@@ -30,7 +30,10 @@ export const logout = async () => {
       method: "GET",
       url: "/api/v1/users/logout ",
     });
-    if (res.data.status == "success") location.reload(true);
+    if (res.data.status == "success")
+      window.setTimeout(() => {
+        location.assign("/");
+      }, 1000);
   } catch (err) {
     showAlert("error", "Erreur de deconnexion, essayez encore.");
   }
