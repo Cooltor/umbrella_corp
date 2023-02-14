@@ -5,7 +5,7 @@ const reviewRouter = require("./reviewRoutes");
 
 const router = express.Router();
 
-//router.use("/:tourId/reviews", reviewRouter); // on utilise la route  des reviews pour créer sur l'url des tours it's called mergeParams
+// on utilise la route  des reviews pour créer sur l'url des benefits :mergeParams
 router.use("/:benefitId/reviews", reviewRouter);
 
 router
@@ -13,7 +13,7 @@ router
   .get(authController.protect, benefitController.getAllBenefits)
   .post(
     authController.protect,
-    authController.restrictTo("admin", "lead-guide"),
+    authController.restrictTo("admin"),
     benefitController.createBenefit
   );
 
