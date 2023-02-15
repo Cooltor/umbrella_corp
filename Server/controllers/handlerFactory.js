@@ -4,7 +4,7 @@ const APIFeatures = require("../utils/apiFeatures");
 
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    // To allow for nested GET review on tour (little hack)
+    // To allow for nested GET review on benefit (little hack)
     let filter = {};
     if (req.params.benefitId) filter = { tour: req.params.benefitId };
 

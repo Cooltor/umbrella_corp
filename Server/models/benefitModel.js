@@ -81,7 +81,7 @@ benefitSchema.pre("save", function (next) {
   next();
 });
 
-// QUERY MIDDLEWRE
+// QUERY MIDDLEWARE
 benefitSchema.pre(/^find/, function (next) {
   // avec expressions régulière fonctionne pour ttes méthodes qui commence par find
   // tourSchema.pre('find', function (next) {    // n'affiche que les tours qui ne sont pas secret quand ya query find() mais aussi findById()

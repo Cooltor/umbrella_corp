@@ -73,9 +73,9 @@ block content
                         label(for='review') Avis
                         textarea#review-new(name='review-new'  cols='30' rows='10' required)
                     .form-group 
-                        input#benefit-id(type='text', name='benefit-id', value=`${benefit.id}`)
+                        input#benefit-id(type='hidden', name='benefit-id', value=`${benefit.id}`)
                     .form-group 
-                        input#user-id(type='text', name='user-id', value=`${user.id}`)
+                        input#user-id(type='hidden', name='user-id', value=`${user.id}`)
                     .form-group.bottom
                         button.btn--add-review Ajouter
 

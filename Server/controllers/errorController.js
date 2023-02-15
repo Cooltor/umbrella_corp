@@ -71,7 +71,7 @@ const sendErrorProd = (err, req, res) => {
   console.error("ERROR 💥", err);
   // 2) Send generic message
   return res.status(err.statusCode).render("error", {
-    title: "Somuelque chose ne va pas!",
+    title: "Quelque chose ne va pas!",
     msg: "SVP essayez plus tard.",
   });
 };

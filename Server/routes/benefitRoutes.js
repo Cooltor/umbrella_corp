@@ -28,5 +28,3 @@ router
   );
 
 module.exports = router;
-
-// voir cours pour ajouter router spécifique ( les 5 forfaits les moins cher par ex)
