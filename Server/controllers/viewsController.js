@@ -61,6 +61,12 @@ exports.getDocumentation = (req, res) => {
   });
 };
 
+exports.getInformations = (req, res) => {
+  res.status(200).render("informations", {
+    title: "Informations",
+  });
+};
+
 exports.getContact = (req, res) => {
   res
     .status(200)

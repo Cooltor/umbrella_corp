@@ -35,7 +35,7 @@ export const deleteBenefit = async (id) => {
       url: `/api/v1/benefits/${id}`,
     });
     console.log(res);
-    if (res.data.status == 204) {
+    if (res.data.status == "success") {
       showAlert("success", "Prestation supprimée avec succès");
       window.setTimeout(() => {
         location.assign("/les-prestations");

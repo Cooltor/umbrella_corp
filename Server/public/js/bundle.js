@@ -12299,7 +12299,7 @@ var deleteBenefit = /*#__PURE__*/function () {
         case 3:
           res = _context2.sent;
           console.log(res);
-          if (res.data.status == 204) {
+          if (res.data.status == "success") {
             (0, _alerts.showAlert)("success", "Prestation supprimée avec succès");
             window.setTimeout(function () {
               location.assign("/les-prestations");
@@ -12533,7 +12533,7 @@ var signupForm = document.querySelector(".form--signup");
 var createForm = document.querySelector(".form-newBenefit");
 var updateForm = document.querySelector(".form-updateBenefit");
 var deleteBtn = document.querySelector(".btn--delete-benefit");
-var reviewForm = document.querySelector(".form-review");
+var reviewForm = document.querySelector(".form-addReview");
 
 // DELEGATION
 

@@ -24,6 +24,12 @@ router.get(
   viewsController.getDocumentation
 );
 
+router.get(
+  "/informations",
+  authController.isLoggedIn,
+  viewsController.getInformations
+);
+
 router.get("/contact", authController.isLoggedIn, viewsController.getContact);
 
 router.get(

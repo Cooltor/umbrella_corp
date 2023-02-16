@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const crypto = require("crypto");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
+const { isValidPassword } = require("mongoose-custom-validators");
 
 const userSchema = new mongoose.Schema(
   {
@@ -37,9 +38,12 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "Veuillez créer votre mot de passe"],
-      minlength: [8, "Un mot de passe doit compter minimum 8 caractères"],
-      select: false,
+      require: [true, "Veuillez entrer votre mot de passe"],
+      validate: {
+        validator: isValidPassword,
+        message:
+          "Password doit faire au moins 10 caractères et avoir au moins: 1 majuscule, 1 minuscule, 1 nombre, and 1 caractères spécial.",
+      },
     },
     passwordConfirm: {
       type: String,

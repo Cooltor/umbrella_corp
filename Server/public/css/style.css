@@ -561,6 +561,21 @@ form .btn--delete-benefit {
   transition: 0.3s;
 }
 
+.btn--delete-benefit {
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: rgb(155, 27, 27);
+  color: whitesmoke;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.btn--delete-benefit:hover {
+  border-radius: 50px;
+}
+
 /* RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE  */
 
 /* RENDRE LE SITE ADAPTE A UN ECRAN DE 395*850 PIXELS EN METTANT LA NAV EN COLOMNNE AINSI QUE LES FORMULAIRE ET EN RETIRANT LES PHOTOS */
