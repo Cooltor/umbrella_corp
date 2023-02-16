@@ -214,7 +214,6 @@ h2 {
   background-color: #fcab0d;
   border-radius: 5px;
   border: 1px solid black;
-  /* box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35); */
   margin: 15px 0 15px 0;
   padding: 15px 0 15px 0;
   transition: 0.3s;
@@ -266,22 +265,7 @@ a.card {
   width: 100%;
   padding: 150px 0 150px 0;
 }
-
-#contact h2 {
-  width: 100%;
-  text-align: center;
-}
-
-#contact form {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
-}
-
+/* 
 .form-group {
   width: 100%;
   display: flex;
@@ -290,41 +274,7 @@ a.card {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-}
-
-#contact form input {
-  width: 80%;
-  padding: 15px 10px 15px 0;
-  margin: 15px 0 15px 0;
-  border-radius: 15px;
-  border: solid black 1px;
-  box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35);
-  text-align: center;
-}
-
-#contact form textarea {
-  width: 80%;
-  padding: 15px 0 15px 0;
-  margin: 15px 0 15px 0;
-  border-radius: 15px;
-  box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35);
-}
-
-#contact form input placeholder {
-  color: #808080;
-  text-align: center;
-}
-
-#contact form button {
-  width: 80%;
-  padding: 15px 0 15px 0;
-  margin: 15px 0 15px 0;
-  border-radius: 15px;
-  box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.35);
-  background-color: #17344f;
-  color: whitesmoke;
-  font-size: 1.5rem;
-}
+} */
 
 footer.footer {
   width: 100%;
@@ -591,4 +541,125 @@ form .btn--delete-benefit {
 }
 .alert--error {
   background-color: #eb4d4b;
+}
+
+.footer__container__politic {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: stretch;
+  padding: 50px 0 50px 0;
+}
+
+.footer__container__politic a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+/* RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE  */
+
+/* RENDRE LE SITE ADAPTE A UN ECRAN DE 395*850 PIXELS EN METTANT LA NAV EN COLOMNNE AINSI QUE LES FORMULAIRE ET EN RETIRANT LES PHOTOS */
+
+@media screen and (max-width: 930px) {
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    padding: 0px 0 50px 0;
+  }
+
+  .header-bottom nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .header-bottom nav ul li a {
+    font-size: 1rem;
+  }
+
+  #container img {
+    display: none;
+  }
+
+  #cardReview {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
+    padding: 50px 0 50px 0;
+  }
+
+  .card {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    margin: 15px 0 15px 0;
+    padding: 15px 0 15px 0;
+  }
+  .account {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    width: 80%;
+    margin-bottom: 200px;
+  }
+
+  .form {
+    width: 80%;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .form button {
+    width: 80%;
+  }
+
+  .reviewBox {
+    width: 80%;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
+    padding: 150px 0 150px 0;
+  }
+
+  .footer__container__logo {
+    display: none;
+  }
 }
