@@ -6,6 +6,7 @@ import { signup } from "./signup";
 import { create } from "./create";
 import { updateBenefit, deleteBenefit } from "./updateBenefit";
 import { createReview } from "./createReview";
+import { forgotPassword } from "./forgotPassword";
 
 // DOM ELEMENTS
 const loginForm = document.querySelector(".form--login");
@@ -17,6 +18,7 @@ const createForm = document.querySelector(".form-newBenefit");
 const updateForm = document.querySelector(".form-updateBenefit");
 const deleteBtn = document.querySelector(".btn--delete-benefit");
 const reviewForm = document.querySelector(".form-addReview");
+const forgotForm = document.querySelector(".form--forgot");
 
 // DELEGATION
 
@@ -113,5 +115,14 @@ if (reviewForm) {
     const benefit = document.getElementById("benefit-id").value;
     const user = document.getElementById("user-id").value;
     createReview(review, rating, benefit, user);
+  });
+}
+
+if (forgotForm) {
+  forgotForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    console.log(email);
+    forgotPassword(email);
   });
 }

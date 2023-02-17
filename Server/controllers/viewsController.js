@@ -105,3 +105,15 @@ exports.getSignupForm = (req, res) => {
       title: "S'inscrire",
     });
 };
+
+exports.getForgotPassword = (req, res) => {
+  res
+    .status(200)
+    .set(
+      "Content-Security-Policy",
+      "connect-src 'self' https://cdnjs.cloudflare.com"
+    )
+    .render("forgotPassword", {
+      title: "Mot de passe oublié",
+    });
+};

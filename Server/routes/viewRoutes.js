@@ -42,4 +42,6 @@ router.get("/inscription", viewsController.getSignupForm);
 
 router.get("/mon-compte", authController.protect, viewsController.getAccount);
 
+router.get("/mot-de-passe-oublie", viewsController.getForgotPassword);
+
 module.exports = router;
