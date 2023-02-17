@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 const pug = require("pug");
-const htmlToText = require("html-to-text");
+const { convert } = require("html-to-text");
 
 module.exports = class Email {
   constructor(user, url) {
@@ -32,6 +32,7 @@ module.exports = class Email {
     });
   }
 
+  // Send the actual email
   async send(template, subject) {
     // 1) Render HTML based on a pug template
     const html = pug.renderFile(
@@ -49,7 +50,7 @@ module.exports = class Email {
       to: this.to,
       subject,
       html,
-      text: htmlToText.fromString(html),
+      text: convert(html, { wordwrap: 130 }),
     };
 
     // 3) Create a transport and send email
@@ -58,5 +59,12 @@ module.exports = class Email {
 
   async sendWelcome() {
     await this.send("welcome", "Bienvenue chez Umbrella Corp."); // c'est la class qui s'occupera de l'implémentation
+  }
+
+  async sendPasswordReset() {
+    await this.send(
+      "passwordReset",
+      "Votre lien de réinitialisation de mot de passe (valable 10 minutes)"
+    );
   }
 };
