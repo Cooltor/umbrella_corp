@@ -1,6 +1,7 @@
 const Benefit = require("../models/benefitModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
+const User = require("../models/userModel");
 
 exports.getOverview = (req, res) => {
   res
@@ -88,11 +89,13 @@ exports.getLoginForm = (req, res) => {
     });
 };
 
-exports.getAccount = (req, res) => {
+exports.getAccount = catchAsync(async (req, res) => {
+  const users = await User.find();
   res.status(200).render("account", {
-    title: "Votre compte",
+    title: "Mon compte",
+    users: users,
   });
-};
+});
 
 exports.getSignupForm = (req, res) => {
   res

@@ -7,6 +7,7 @@ import { create } from "./create";
 import { updateBenefit, deleteBenefit } from "./updateBenefit";
 import { createReview } from "./createReview";
 import { forgotPassword } from "./forgotPassword";
+import { deleteUser } from "./deleteUser";
 
 // DOM ELEMENTS
 const loginForm = document.querySelector(".form--login");
@@ -19,6 +20,7 @@ const updateForm = document.querySelector(".form-updateBenefit");
 const deleteBtn = document.querySelector(".btn--delete-benefit");
 const reviewForm = document.querySelector(".form-addReview");
 const forgotForm = document.querySelector(".form--forgot");
+const deleteUserForm = document.querySelector(".form--deleteUser");
 
 // DELEGATION
 
@@ -98,14 +100,6 @@ if (updateForm) {
   });
 }
 
-if (
-  deleteBtn.addEventListener("click", (e) => {
-    const id = document.getElementById("update-id").value;
-    e.preventDefault();
-    deleteBenefit(id);
-  })
-);
-
 if (reviewForm) {
   reviewForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -126,3 +120,21 @@ if (forgotForm) {
     forgotPassword(email);
   });
 }
+
+if (deleteUserForm) {
+  deleteUserForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const id = document.getElementById("user-id").value;
+    deleteUser(id);
+  });
+}
+
+// laisser ce if en dernier
+
+if (
+  deleteBtn.addEventListener("click", (e) => {
+    const id = document.getElementById("update-id").value;
+    e.preventDefault();
+    deleteBenefit(id);
+  })
+);

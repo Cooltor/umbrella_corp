@@ -57,4 +57,18 @@ block content
 
                     p INFO : pour modifier, rendez-vous sur la page de la prestation en question.
 
+                //- faire apparaitre les users dans un tableau avec un bouton supprimer
+
+                form.form.form--deleteUser
+                    h2 Supprimer un utilisateur
+
+                    .form-group
+                        label(for='user') Utilisateur à supprimer :
+                        select#user-select(name='user')
+                            each user in users
+                                option#user-id(value=`${user.id}`)= user.name+' '+user.firstname+' - '+user.email
+
+                    .form-group.bottom
+                        button.btn--delete-user Supprimer
+
 
