@@ -15,6 +15,10 @@ body {
   justify-content: center;
   align-items: center;
   align-content: stretch;
+  background-image: url("../img/fondecran1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER */
@@ -172,7 +176,9 @@ header img {
   align-items: center;
   align-content: stretch;
   width: 100%;
-  padding: 75px 0 75px 0;
+  padding: 75px 30px 75px 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .about-img {
@@ -187,6 +193,7 @@ h2 {
   width: 100%;
   text-align: justify;
   padding: 0 0 15px 25px;
+  font-size: larger;
 }
 
 /* CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS CARDS */
@@ -315,8 +322,9 @@ footer img {
   align-items: center;
   align-content: stretch;
   text-align: center;
-
-  padding-bottom: 50px;
+  padding: 50px 30px 50px 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 h2 {
@@ -447,7 +455,9 @@ select {
   justify-content: center;
   align-items: center;
   align-content: stretch;
-  padding: 50px 0 50px 0;
+  padding: 50px 30px 50px 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .form-group {
