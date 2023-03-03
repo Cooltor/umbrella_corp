@@ -327,7 +327,25 @@ footer img {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+}
+
+.form__photo-upload label {
+  cursor: pointer;
+
+  color: #555;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.form__photo-upload label:hover {
+  background-color: #bdcdd9;
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .form__upload {
