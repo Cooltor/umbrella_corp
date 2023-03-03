@@ -43,7 +43,7 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  align-items: baseline;
+  align-items: center;
   align-content: stretch;
 }
 
@@ -62,6 +62,12 @@ header {
   padding: 5px 25px 5px 25px;
   margin: 15px 0 15px 0;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }
 
 .nav-login ul {
@@ -69,7 +75,7 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  align-items: baseline;
+  align-items: center;
   align-content: stretch;
 }
 
@@ -112,6 +118,13 @@ h1 {
 
 header img {
   width: 15%;
+}
+
+.nav__user-img {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
 }
 
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV */
@@ -300,6 +313,31 @@ footer img {
   padding: 0 15px 0 15px;
 }
 
+.form__user-photo {
+  height: 7.5rem;
+  width: 7.5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.form__photo-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.form__upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
 /* BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT BENEFIT */
 
 .benefit {

@@ -6,6 +6,7 @@ header
                 if user
                     ul
                         li 
+                            img.nav__user-img(src=`/img/users/${user.photo}`, alt=`Photo de €{user.name}`)
                             a(href='/mon-compte')= ` ${user.firstname} (connecté)`
                         li  
                             a.nav-login--logout(href='#') Déconnexion
