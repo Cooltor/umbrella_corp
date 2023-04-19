@@ -12089,8 +12089,11 @@ var updateSettings = /*#__PURE__*/function () {
         case 4:
           res = _context.sent;
           console.log(res);
-          if (res.data.status == "success") {
-            (0, _alerts.showAlert)("success", "".concat(type.toUpperCase(), " mis \xE0 jour avec succ\xE8s!"));
+          if (res.data.status === "success") {
+            (0, _alerts.showAlert)("success", "".concat(type.toUpperCase(), " modifi\xE9 avec succ\xE8s!"));
+            window.setTimeout(function () {
+              location.reload();
+            }, 1000);
           }
           _context.next = 12;
           break;
